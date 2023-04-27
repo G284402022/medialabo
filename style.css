@@ -1,0 +1,24 @@
+p {
+    color: black;
+}
+
+h1 {
+    color: white;
+    text-shadow: green 1px 0 10px;
+}
+
+div#x {
+    color: #8ef48e;
+}
+
+a:link {
+    color: pink;
+}
+  
+a:visited {
+   color: #296329;
+}
+  
+a:hover {
+   text-decoration: none;
+}

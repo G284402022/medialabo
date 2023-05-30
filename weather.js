@@ -51,3 +51,31 @@ for(let d of "name"){
   console.log(d.name);
 }
 
+let h = document.querySelector('button#hantei');
+h.addEventListener('click', hantei);
+
+function hantei() {
+  let i = document.querySelector('input[name="t"]');
+  let t = i.value;
+  console.log(t);
+}
+
+let a=[
+  {n:"Cairo カイロ （エジプト）"},
+  {n:"Moscow モスクワ （ロシア）"},
+  {n:"Johannesburg ヨハネスブルク （南アフリカ）"},
+  {n:"Beijing 北京 （中華人民共和国）"},
+  {n:"Tokyo 東京 （日本）"},
+  {n:"Singapore シンガポール"},
+  {n:"Sydney シドニー （オーストラリア）"},
+  {n:"London ロンドン （イギリス）"},
+  {n:"Paris パリ （フランス）"},
+  {n:"Rio de Janeiro リオデジャネイロ （ブラジル）"},
+  {n:"New York ニューヨーク （アメリカ合衆国）"},
+  {n:"Los Angeles ロサンゼルス （アメリカ合衆国）"},
+];
+
+let b=[
+  
+
+];

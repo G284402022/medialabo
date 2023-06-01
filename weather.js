@@ -51,31 +51,63 @@ for(let d of "name"){
   console.log(d.name);
 }
 
-let h = document.querySelector('button#hantei');
-h.addEventListener('click', hantei);
+let h = document.querySelector('button#btn');
+h.addEventListener('click', showSelectResult);
 
-function hantei() {
-  let i = document.querySelector('input[name="t"]');
-  let t = i.value;
-  console.log(t);
+function showSelectResult() {
+  let s = document.querySelector('select#t');
+  let idx = s.selectedIndex;  // idx 番目の option が選択された
+
+  let os = s.querySelectorAll('option');  // s の子要素 option をすべて検索
+  let o = os.item(idx);       // os の idx 番目の要素
+
+    let v=o.value;
+    let url = "https://www.nishita-lab.org/web-contents/jsons/openweather/"+v+".json";
+    console.log(url);
+
+    axios.get(url)
+        .then(showResult)   // 通信成功
+        .catch(showError)   // 通信失敗
+        .then(finish);      // 通信の最後の処理
+    
+}
+// 通信が成功した時の処理
+function showResult(resp) {
+    // サーバから送られてきたデータを出力
+    let data = resp.data;
+
+    // data が文字列型なら，オブジェクトに変換する
+    if (typeof data === 'string') {
+        data = JSON.parse(data);
+    }
+
+    // data をコンソールに出力
+    let a1=document.querySelector("span#s1");
+    a1.textContent=data.name;
+    let a2=document.querySelector("span#s2");
+    a2.textContent=data.main;
+    let a3=document.querySelector("span#s3");
+    a3.textContent=data.coord.lon;
+    let a4=document.querySelector("span#s4");
+    a4.textContent=data.coord.lat;
+    let a5=document.querySelector("span#s5");
+    a5.textContent=data.main.temp_min;
+    let a6=document.querySelector("span#s6");
+    a6.textContent=data.main.temp_max;
+    let a7=document.querySelector("span#s7");
+    a7.textContent=data.main.humidity;
+    let a8=document.querySelector("span#s8");
+    a8.textContent=data.wind.speed;
+    let a9=document.querySelector("span#s9");
+    a9.textContent=data.wind.deg;
 }
 
-let a=[
-  {n:"Cairo カイロ （エジプト）"},
-  {n:"Moscow モスクワ （ロシア）"},
-  {n:"Johannesburg ヨハネスブルク （南アフリカ）"},
-  {n:"Beijing 北京 （中華人民共和国）"},
-  {n:"Tokyo 東京 （日本）"},
-  {n:"Singapore シンガポール"},
-  {n:"Sydney シドニー （オーストラリア）"},
-  {n:"London ロンドン （イギリス）"},
-  {n:"Paris パリ （フランス）"},
-  {n:"Rio de Janeiro リオデジャネイロ （ブラジル）"},
-  {n:"New York ニューヨーク （アメリカ合衆国）"},
-  {n:"Los Angeles ロサンゼルス （アメリカ合衆国）"},
-];
+// 通信エラーが発生した時の処理
+function showError(err) {
+    console.log(err);
+}
 
-let b=[
-  
-
-];
+// 通信の最後にいつも実行する処理
+function finish() {
+    console.log('Ajax 通信が終わりました');
+}

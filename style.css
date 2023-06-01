@@ -5,10 +5,16 @@ p {
 h1 {
     color: white;
     text-shadow: green 1px 0 10px;
+    
 }
 
+h2,h3 {
+	background: linear-gradient(0.25turn, #ecffdf, white);
+	margin: 5px;
+    font-style: italic;
+}
 div#x {
-    color: #8ef48e;
+    color: #67da67;
 }
 
 a:link {

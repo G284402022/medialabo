@@ -28,17 +28,19 @@ function hantei() {
   a1.textContent=yoso;
 
   let w=document.querySelector("p#result");
-  /*if(kaisu<3){
+  if(kaisu<3){
     if(yoso<kotae){
       w.textContent="まちがい．答えはもっと大きいですよ";
     } else if(kotae<yoso){
       w.textContent="まちがい．答えはもっと小さいですよ";
     } 
+    
     if((kaisu-1)&&yoso===kotae){
       w.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
     }else if(yoso==kotae){
       w.textContent="正解です.おめでとう！";
     }}
+
     if(kaisu===3){
       if((kaisu-1)&&yoso===kotae){
         w.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
@@ -51,26 +53,6 @@ function hantei() {
     if(kaisu>=4){
       w.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
     }}
-    */
-    if(kaisu<3){
-      if(kaisu===1){
-        if(kotae===yoso){
-          w.textContent="正解です.おめでとう！";
-        }else if(yoso<kotae){
-          w.textContent="まちがい.答えはもっと大きいてすよ";
-        }else if(kotae<yoso){
-          w.textContent="まちがい.答えはもっと小さいですよ";
-        }if(kotae){
-          
-        }
-        }else{
-          w.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
-        }
-     }
-}
     
-  // 課題3-1: 正解判定する
-  // kotae と yoso が一致するかどうか調べて結果を出力
-  // 課題3-1における出力先はコンソール
 
 

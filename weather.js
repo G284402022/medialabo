@@ -64,6 +64,15 @@ function showSelectResult() {
     let v=o.value;
     let url = "https://www.nishita-lab.org/web-contents/jsons/openweather/"+v+".json";
     console.log(url);
+    
+
+    let pict=document.querySelector("pict#pt");
+    let p=document.createElement("p");
+    let img=document.createElement("img");
+    img.setAttribute=("src");
+    img.src=v+".jpeg";
+    p.insertAdjacentElement("beforeend", img);
+    pict.insertAdjacentElement("beforeend", p);
 
     axios.get(url)
         .then(showResult)   // 通信成功

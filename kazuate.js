@@ -14,6 +14,7 @@ let kaisu = 0;
 let h = document.querySelector('button#hantei');
 h.addEventListener('click', hantei);
 
+
 function hantei() {
   let i = document.querySelector('input[name="number"]');
   let number = i.value;

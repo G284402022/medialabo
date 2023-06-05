@@ -53,6 +53,8 @@ for(let d of "name"){
 
 let h = document.querySelector('button#btn');
 h.addEventListener('click', showSelectResult);
+//let w = document.querySelector('pict#pt');			// pict#pt 要素を検索
+//w.remove();	
 
 function showSelectResult() {
   let s = document.querySelector('select#t');
@@ -73,6 +75,7 @@ function showSelectResult() {
     img.src=v+".jpeg";
     p.insertAdjacentElement("beforeend", img);
     pict.insertAdjacentElement("beforeend", p);
+    console.log(img)
 
     axios.get(url)
         .then(showResult)   // 通信成功

@@ -1,7 +1,7 @@
 h1 {
-    color:rgb(118, 225, 255);
+    color:rgb(255, 192, 98);
     text-align: center;
-    background: linear-gradient(0.5turn, #f6fffb, rgb(225, 236, 255));
+    background: linear-gradient(0.5turn, #f2ffe1, #fefff4);
     font-style: serif;
 }
 div.z1 {
@@ -23,7 +23,24 @@ div.z2 {
 }
 
 div.b {
-    background: rgb(212, 255, 255);
+    background: #fbffd8;
+}
+
+pict#pt {
+	display: grid; 
+    float:right;
+	grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    width: 400px;
+}
+
+pict#pt > p {
+	border: 1px solid #efefef;
+}
+
+pict#pt > p > img {
+	display: block;
+	width: 100%;
 }
 
 

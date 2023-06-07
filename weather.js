@@ -53,8 +53,6 @@ for(let d of "name"){
 
 let h = document.querySelector('button#btn');
 h.addEventListener('click', showSelectResult);
-//let w = document.querySelector('pict#pt');			// pict#pt 要素を検索
-//w.remove();	
 
 function showSelectResult() {
   let s = document.querySelector('select#t');
@@ -67,15 +65,39 @@ function showSelectResult() {
     let url = "https://www.nishita-lab.org/web-contents/jsons/openweather/"+v+".json";
     console.log(url);
     
-
-    let pict=document.querySelector("pict#pt");
+    span=0;
+    if(span>1){
+      let w = document.querySelector('span#pt');			// span#pt 要素を検索
+      w.remove();
+      span=span+1;
+      let span=document.querySelector("span#pt");
+      let p=document.createElement("p");
+      let img=document.createElement("img");
+      img.setAttribute=("src");
+      img.src="photojs/"+v+".jpeg";
+      p.insertAdjacentElement("beforeend", img);
+      span.insertAdjacentElement("beforeend", p);
+      console.log(img)
+    }	else{
+      //span=span+1;
+      let span=document.querySelector("span#pt");
+      let p=document.createElement("p");
+      let img=document.createElement("img");
+      img.setAttribute=("src");
+      img.src="photojs/"+v+".jpeg";
+      p.insertAdjacentElement("beforeend", img);
+      span.insertAdjacentElement("beforeend", p);
+      console.log(img)
+    }
+    /*let span=document.querySelector("span#pt");
     let p=document.createElement("p");
     let img=document.createElement("img");
     img.setAttribute=("src");
-    img.src=v+".jpeg";
+    img.src="photojs/"+v+".jpeg";
     p.insertAdjacentElement("beforeend", img);
-    pict.insertAdjacentElement("beforeend", p);
-    console.log(img)
+    span.insertAdjacentElement("beforeend", p);
+    span=span+1;
+    console.log(img)*/
 
     axios.get(url)
         .then(showResult)   // 通信成功
@@ -97,7 +119,7 @@ function showResult(resp) {
     let a1=document.querySelector("span#s1");
     a1.textContent=data.name;
     let a2=document.querySelector("span#s2");
-    a2.textContent=data.main;
+    a2.textContent=data.weather[0].description;
     let a3=document.querySelector("span#s3");
     a3.textContent=data.coord.lon;
     let a4=document.querySelector("span#s4");
